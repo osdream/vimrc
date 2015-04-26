@@ -488,19 +488,18 @@ endfunction
 function! <SID>GetDoxFileHeader(leading_blank)
   let doc = ""
   let doc = doc. a:leading_blank."/***************************************************************************\n"
-  let doc = doc. a:leading_blank." * \n"
+  let doc = doc. a:leading_blank." *\n"
   let doc = doc. a:leading_blank." * Copyright (c) ".<SID>GetYear()." Baidu.com, Inc. All Rights Reserved\n"
   let doc = doc. a:leading_blank." * \$Id\$\n"
-  let doc = doc. a:leading_blank." * \n"
+  let doc = doc. a:leading_blank." *\n"
+  let doc = doc. a:leading_blank." * @file ".<SID>GetFileName()."\n"
+  let doc = doc. a:leading_blank." * @author:  ".<SID>GetUserName()."(".<SID>GetEmail().")\n"
+  let doc = doc. a:leading_blank." * @version: \$Revision\$\n"
+  let doc = doc. a:leading_blank." * @date:    \$Date: ".<SID>GetDate()."\$\n"
+  let doc = doc. a:leading_blank." * @desc:    \n"
+  let doc = doc. a:leading_blank." *\n"
   let doc = doc. a:leading_blank." **************************************************************************/\n"
-  let doc = doc. a:leading_blank." \n \n"
-  let doc = doc. a:leading_blank."/*\n"
-  let doc = doc. a:leading_blank." * path:    ".<SID>GetFileName()."\n"
-  let doc = doc. a:leading_blank." * desc:    \n"
-  let doc = doc. a:leading_blank." * author:  ".<SID>GetUserName()."(".<SID>GetEmail().")\n"
-  let doc = doc. a:leading_blank." * version: \$Revision\$\n"
-  let doc = doc. a:leading_blank." * date:    \$Date: ".<SID>GetDate()."\$\n"
-  let doc = doc. a:leading_blank." */\n"
+  let doc = doc. a:leading_blank."\n\n"
   call append(line('$'), "/* vim: set ts=4 sw=4 sts=4 tw=100 : */")
   return doc
 endfunction
@@ -689,7 +688,7 @@ function! <SID>InsertFormat()
     let idx = idx - 1
   endwhile
 
-  call cursor(11, 13)
+  call cursor(10, 14)
 endfunction
 
 function! <SID>InsertHeadFormat()
@@ -702,10 +701,10 @@ endfunction
 
 map <F2> :call <SID>GenDoc()<CR>
 map <F3> :call <SID>ValComment()<CR>
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>a :call <SID>GetDoxFH(0)<CR>
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>s :call <SID>GetDoxFH(1)<CR>
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>d :call <SID>GetDoxFH(2)<CR>
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>f :call <SID>GetDoxFH(3)<CR>
+" autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>a :call <SID>GetDoxFH(0)<CR>
+" autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>s :call <SID>GetDoxFH(1)<CR>
+" autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>d :call <SID>GetDoxFH(2)<CR>
+" autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python,php nnoremap <silent> <Leader>f :call <SID>GetDoxFH(3)<CR>
 autocmd BufNewFile *.h,*.hpp,*.cpp,*.js,*.less,*.css,*.c,*.cc,*.java,*.pl :call <SID>InsertFormat()
 autocmd BufNewFile *.py :call <SID>InsertPythonHead()
 autocmd BufNewFile *.coffee :call <SID>InsertCoffeeHead()
