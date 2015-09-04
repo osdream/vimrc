@@ -116,3 +116,7 @@ nnoremap <silent> <Leader>bd :Bclose<CR>
 
 " GRB: use fancy buffer closing that doesn't close the split
 cnoremap <expr> bd (getcmdtype() == ':' ? 'Bclose' : 'bd')
+
+" indent multiple time without exiting visual model
+vnoremap < <gv
+vnoremap > >gv
