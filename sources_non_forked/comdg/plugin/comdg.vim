@@ -443,7 +443,7 @@ function! <SID>GetVer()
 endfunction
 
 function! <SID>GetEmail()
-  return "songao@baidu.com"
+  return "songao@wifi.com"
 endfunction
 
 function! <SID>GetCoffeeFileHeader()
@@ -451,7 +451,7 @@ function! <SID>GetCoffeeFileHeader()
   let doc = doc. "#!vim: set ts=4 sw=4 sts=4 tw=100 :\n"
   let doc = doc. "# ***************************************************************************\n"
   let doc = doc. "# \n"
-  let doc = doc. "# Copyright (c) ".<SID>GetYear()." Baidu.com, Inc. All Rights Reserved\n"
+  let doc = doc. "# Copyright (c) ".<SID>GetYear()." Wifi.com, Inc. All Rights Reserved\n"
   let doc = doc. "# \$Id\$ \n"
   let doc = doc. "# \n"
   let doc = doc. "# **************************************************************************/\n"
@@ -471,7 +471,7 @@ function! <SID>GetPythonFileHeader()
   let doc = doc. "#!vim: set ts=4 sw=4 sts=4 tw=100 :\n"
   let doc = doc. "# ***************************************************************************\n"
   let doc = doc. "# \n"
-  let doc = doc. "# Copyright (c) ".<SID>GetYear()." Baidu.com, Inc. All Rights Reserved\n"
+  let doc = doc. "# Copyright (c) ".<SID>GetYear()." Wifi.com, Inc. All Rights Reserved\n"
   let doc = doc. "# \$Id\$ \n"
   let doc = doc. "# \n"
   let doc = doc. "# **************************************************************************/\n"
@@ -489,7 +489,7 @@ function! <SID>GetDoxFileHeader(leading_blank)
   let doc = ""
   let doc = doc. a:leading_blank."/***************************************************************************\n"
   let doc = doc. a:leading_blank." *\n"
-  let doc = doc. a:leading_blank." * Copyright (c) ".<SID>GetYear()." Baidu.com, Inc. All Rights Reserved\n"
+  let doc = doc. a:leading_blank." * Copyright (c) ".<SID>GetYear()." Wifi.com, Inc. All Rights Reserved\n"
   let doc = doc. a:leading_blank." * \$Id\$\n"
   let doc = doc. a:leading_blank." *\n"
   let doc = doc. a:leading_blank." * @file ".<SID>GetFileName()."\n"
