@@ -108,7 +108,7 @@ if has('mouse')
 endif
 
 " Ignore case when searching
-set ignorecase
+set noignorecase
 
 " When searching try to be smart about cases 
 set smartcase

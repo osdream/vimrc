@@ -4,6 +4,18 @@
 set list
 set listchars=tab:»\ ,trail:.
 
+set mouse=r
+
+set nowrap
+
+" set number
+set relativenumber
+set cursorline       " highlight current line
+set cursorcolumn     " highlight current column
+highlight CursorColumn guibg=lightblue ctermbg=17
+highlight CursorLine guibg=17 ctermbg=17 gui=none cterm=none
+highlight LineNr ctermfg=234
+
 " overwrite the config in plugins_config.vim
 let g:NERDTreeWinPos = "left"
 
