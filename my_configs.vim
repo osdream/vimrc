@@ -8,6 +8,9 @@ set mouse=r
 
 set nowrap
 
+" 不想按esc键者的福音, 很多人用jj jk  方便按就行
+imap df  <Esc>`^
+
 " set number
 set relativenumber
 set cursorline       " highlight current line
